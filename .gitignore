@@ -1,0 +1,19 @@
+# Project Information & Source Documents Folder
+Rural_solar_electrification Project-20261011T040855Z-1-001/
+Rural_solar_electrification*
+
+# Dependencies
+node_modules/
+/.pnp
+.pnp.js
+
+# Production build
+dist/
+dist-ssr/
+*.local
+
+# Editor & OS files
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db
