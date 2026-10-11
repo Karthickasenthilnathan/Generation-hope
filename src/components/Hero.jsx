@@ -12,6 +12,7 @@ import {
   ExternalLink 
 } from 'lucide-react';
 import { PROJECT_DATA } from '../data/projectData';
+import { getAssetUrl } from '../utils/assetHelper';
 
 export default function Hero() {
   const iconMap = {
@@ -65,9 +66,14 @@ export default function Hero() {
           <div className="hero-media-wrap">
             <div className="hero-media-card">
               <img
-                src="/images/solar-rooftop-array.jpg"
+                src={getAssetUrl("/images/solar-rooftop-array.jpg")}
                 alt="2.68 kWp Solar Rooftop Array at Nallur Government High School"
                 className="hero-media-img"
+                onError={(e) => {
+                  if (import.meta.env.DEV) {
+                    console.error(`[Hero] Failed to load image: ${e.currentTarget.src}`);
+                  }
+                }}
               />
               <div className="hero-media-caption">
                 <span>Rooftop Solar PV Array • Nallur GHSS</span>

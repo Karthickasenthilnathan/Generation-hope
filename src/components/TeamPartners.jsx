@@ -1,6 +1,7 @@
 import React from 'react';
 import { Users, GraduationCap, Building2, ShieldCheck, Heart } from 'lucide-react';
 import { PROJECT_DATA } from '../data/projectData';
+import { getAssetUrl } from '../utils/assetHelper';
 
 export default function TeamPartners() {
   const { team } = PROJECT_DATA;
@@ -67,6 +68,21 @@ export default function TeamPartners() {
           <div className="partners-grid">
             {team.communityPartners.map((partner, idx) => (
               <div key={idx} className="partner-card">
+                {partner.logo && (
+                  <div style={{ marginBottom: '0.85rem', height: '42px', display: 'flex', alignItems: 'center' }}>
+                    <img
+                      src={getAssetUrl(partner.logo)}
+                      alt={`${partner.entity} logo`}
+                      style={{ maxHeight: '38px', maxWidth: '140px', objectFit: 'contain' }}
+                      loading="lazy"
+                      onError={(e) => {
+                        if (import.meta.env.DEV) {
+                          console.error(`[TeamPartners] Failed to load logo: ${e.currentTarget.src}`);
+                        }
+                      }}
+                    />
+                  </div>
+                )}
                 <div className="partner-entity">{partner.entity}</div>
                 <div className="partner-rep">{partner.representative}</div>
                 <p style={{ fontSize: '0.825rem', color: 'var(--text-secondary)', lineHeight: 1.5 }}>

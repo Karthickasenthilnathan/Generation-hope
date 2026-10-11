@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { Camera, Maximize2, X, CheckCircle } from 'lucide-react';
 import { PROJECT_DATA } from '../data/projectData';
+import { getAssetUrl } from '../utils/assetHelper';
 
 export default function PhotoGallery() {
   const { photos } = PROJECT_DATA;
@@ -37,10 +38,15 @@ export default function PhotoGallery() {
             >
               <div className="gallery-card-img-wrap" style={{ position: 'relative' }}>
                 <img
-                  src={photo.src}
+                  src={getAssetUrl(photo.src)}
                   alt={photo.title}
                   className="gallery-card-img"
                   loading="lazy"
+                  onError={(e) => {
+                    if (import.meta.env.DEV) {
+                      console.error(`[PhotoGallery] Failed to load image: ${e.currentTarget.src}`);
+                    }
+                  }}
                 />
                 <div
                   style={{
@@ -88,9 +94,14 @@ export default function PhotoGallery() {
             </button>
 
             <img
-              src={selectedPhoto.src}
+              src={getAssetUrl(selectedPhoto.src)}
               alt={selectedPhoto.title}
               style={{ width: '100%', maxHeight: '520px', objectFit: 'contain', borderRadius: 'var(--radius-md)', marginBottom: '1.25rem', backgroundColor: '#000' }}
+              onError={(e) => {
+                if (import.meta.env.DEV) {
+                  console.error(`[PhotoGallery Lightbox] Failed to load image: ${e.currentTarget.src}`);
+                }
+              }}
             />
 
             <span className="gallery-card-tag">{selectedPhoto.category}</span>

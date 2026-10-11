@@ -1,6 +1,7 @@
 import React from 'react';
 import { SunMedium, Shield, BatteryMedium, Cpu, CheckCircle } from 'lucide-react';
 import { PROJECT_DATA } from '../data/projectData';
+import { getAssetUrl } from '../utils/assetHelper';
 
 export default function SolarSolution() {
   const { solution } = PROJECT_DATA;
@@ -56,9 +57,14 @@ export default function SolarSolution() {
         <div style={{ marginTop: '3.5rem', display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(320px, 1fr))', gap: '2rem' }}>
           <div className="hero-media-card" style={{ padding: '1rem' }}>
             <img
-              src="/images/inverter-battery-bank.jpg"
+              src={getAssetUrl("/images/inverter-battery-bank.jpg")}
               alt="Child-Safe Battery Enclosure and 3.5 kVA Solar Inverter"
               style={{ width: '100%', height: '260px', objectFit: 'cover', borderRadius: 'var(--radius-md)' }}
+              onError={(e) => {
+                if (import.meta.env.DEV) {
+                  console.error(`[SolarSolution] Failed to load battery bank image: ${e.currentTarget.src}`);
+                }
+              }}
             />
             <div style={{ padding: '0.85rem 0.25rem 0' }}>
               <div style={{ fontWeight: 700, color: 'var(--color-forest-dark)', fontSize: '0.95rem' }}>
@@ -72,9 +78,14 @@ export default function SolarSolution() {
 
           <div className="hero-media-card" style={{ padding: '1rem' }}>
             <img
-              src="/images/electrical-distribution.jpg"
+              src={getAssetUrl("/images/electrical-distribution.jpg")}
               alt="AC and DC Distribution Conduits and Earthing Protection"
               style={{ width: '100%', height: '260px', objectFit: 'cover', borderRadius: 'var(--radius-md)' }}
+              onError={(e) => {
+                if (import.meta.env.DEV) {
+                  console.error(`[SolarSolution] Failed to load electrical distribution image: ${e.currentTarget.src}`);
+                }
+              }}
             />
             <div style={{ padding: '0.85rem 0.25rem 0' }}>
               <div style={{ fontWeight: 700, color: 'var(--color-forest-dark)', fontSize: '0.95rem' }}>

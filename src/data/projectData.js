@@ -10,6 +10,8 @@
  * - Project Assessment Matrix 2022-2023
  */
 
+import { getAssetUrl } from '../utils/assetHelper';
+
 export const PROJECT_DATA = {
   meta: {
     title: "Rural Solar Electrification Station",
@@ -318,49 +320,49 @@ export const PROJECT_DATA = {
   photos: [
     {
       id: "rooftop",
-      src: "/images/solar-rooftop-array.jpg",
+      src: getAssetUrl("/images/solar-rooftop-array.jpg"),
       title: "2.68 kWp Rooftop Solar PV Array",
       category: "Hardware",
       caption: "8 × 335Wp Renewsys Polycrystalline modules mounted on custom 180 km/h cyclone-rated aluminium structures with concrete ballasts atop Nallur Government High School.",
     },
     {
       id: "storage-cage",
-      src: "/images/inverter-battery-bank.jpg",
+      src: getAssetUrl("/images/inverter-battery-bank.jpg"),
       title: "Child-Safe Inverter & Battery Security Cage",
       category: "Safety & Storage",
       caption: "UTL 3.5 kVA Solar Inverter and 4 × 150Ah Axcel C10 battery bank (48Vdc) secured behind a custom welded iron mesh cage to ensure full child safety in the school corridor.",
     },
     {
       id: "distribution",
-      src: "/images/electrical-distribution.jpg",
+      src: getAssetUrl("/images/electrical-distribution.jpg"),
       title: "AC/DC Distribution & Conduit Wiring",
       category: "Engineering",
       caption: "Protected electrical terminations showing tin-annealed 4 sq.mm DC cables and Polycab AC lines running through uPVC conduits into classrooms and the computer lab.",
     },
     {
       id: "inauguration",
-      src: "/images/inauguration-ceremony.jpg",
+      src: getAssetUrl("/images/inauguration-ceremony.jpg"),
       title: "Public Inauguration & Community Handover",
       category: "Community Event",
       caption: "Formal handover ceremony on 23 July 2023 at Nallur GHSS with Village Panchayat President, School Headmaster, Sairam leadership, student leads, and local residents.",
     },
     {
       id: "lamp-lighting",
-      src: "/images/ceremony-lamp-lighting.jpg",
+      src: getAssetUrl("/images/ceremony-lamp-lighting.jpg"),
       title: "Traditional Lamp Lighting at Nallur GHSS",
       category: "Community Event",
       caption: "Ceremonial commencement celebrating the arrival of clean renewable power in the presence of school teachers, students, and village community leaders.",
     },
     {
       id: "dignitaries",
-      src: "/images/dignitaries-gathering.jpg",
+      src: getAssetUrl("/images/dignitaries-gathering.jpg"),
       title: "Stakeholder Gathering & Student Briefing",
       category: "Partnership",
       caption: "Student project team presenting the engineering architecture and maintenance protocols to community representatives and institutional advisors.",
     },
     {
       id: "newspaper",
-      src: "/images/newspaper-coverage.jpg",
+      src: getAssetUrl("/images/newspaper-coverage.jpg"),
       title: "Regional Newspaper Media Coverage",
       category: "Press & Media",
       caption: "Published news report highlighting the youth-led solar electrification project at Poonthandalam village as a benchmark for rural institutional electrification.",
@@ -450,6 +452,7 @@ export const PROJECT_DATA = {
       },
       {
         entity: "IEEE HAC & IEEE SIGHT",
+        logo: getAssetUrl("/images/ieee-hac-logo.png"),
         representative: "Global Humanitarian Activities Committee",
         role: "Grant funding provider ($4,000 USD grant under Call for Proposals 22-HAC-103).",
       },
