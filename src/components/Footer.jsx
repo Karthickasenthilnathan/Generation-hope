@@ -57,9 +57,7 @@ export default function Footer() {
         </div>
 
         <div className="footer-bottom">
-          <div className="footer-disclaimer-note">
-            <strong>Application Disclaimer:</strong> This website presents independent project documentation for our Generation Hope youth climate programme application. It does not imply that the project has been selected for Generation Hope or is officially endorsed by any United Nations organization. All facts and figures reflect verified documentation from IEEE Project 22-HAC-103.
-          </div>
+          
           <div>
             © {new Date().getFullYear()} Rural Solar Electrification Project • Sri Sai Ram Engineering College
           </div>
